@@ -1,0 +1,15 @@
+
+Respuestas:
+  Semáforos:
+    1 - Sí, está garantizado por el semáforo: semA que hace de mutex.
+    2 - No finaliza debido a que semB inicializa en 2 y cuando el tercer hilo haga el acquire de semB (s2) el mismo quedará bloqueado ya que tendrá el valor
+        en 0 (cero). Se arregla inicializando en semáforo: semB en 3.
+    3 - Posible salida:
+          x sumo 1.
+          y sumo 2.
+          z sumo 3.
+          valor: 6
+          main fin.
+    4 - Cualquiera de ellos, ya que el orden de ejecución de los hilos es ajena a la aplicación.
+
+    
