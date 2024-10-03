@@ -13,10 +13,10 @@ public class ClienteDto implements Serializable {
 	private String codigo;
 	private List<FacturaDto> facturas;
 	
-	public ClienteDto(Cliente cliente) {
+	public ClienteDto(Cliente cliente, boolean facturas) {
 		this.codigo = cliente.getCodigo();
 		this.facturas = new ArrayList<FacturaDto>();
-		if (cliente.getFacturas()!=null) {
+		if (facturas && cliente.getFacturas()!=null) {
 			cliente.getFacturas().forEach(factura -> {
 				FacturaDto facturaDto = new FacturaDto(factura);
 				this.facturas.add(facturaDto);

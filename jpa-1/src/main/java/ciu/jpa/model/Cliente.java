@@ -17,7 +17,7 @@ public class Cliente {
 	private Integer id;
 	private String codigo;
 	
-	@OneToMany(fetch = FetchType.EAGER)
+	@OneToMany(fetch = FetchType.LAZY)
 	@JoinColumn(name = "cliente_id")
 	private Set<Factura> facturas;
 			
