@@ -15,4 +15,9 @@ public class ClienteService {
 	public Cliente guardar(Cliente cliente) {
 		return this.clienteRepository.save(cliente);
 	}
+	
+	public Cliente getById(Integer id) {
+		return this.clienteRepository.findById(id).orElse(null);
+	}
+
 }
