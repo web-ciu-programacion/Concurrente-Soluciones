@@ -1,7 +1,9 @@
 package ciu.jpa.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -11,6 +13,9 @@ public class Factura {
 	@Id
 	private Integer id;
 	private Integer numero;
+	
+	@ManyToOne(fetch = FetchType.EAGER)
+	private Cliente cliente;
 	
 	public Integer getId() {
 		return id;
@@ -23,5 +28,11 @@ public class Factura {
 	}
 	public void setNumero(Integer numero) {
 		this.numero = numero;
+	}
+	public Cliente getCliente() {
+		return cliente;
+	}
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
 	}
 }

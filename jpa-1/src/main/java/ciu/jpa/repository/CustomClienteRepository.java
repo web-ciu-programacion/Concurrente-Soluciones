@@ -10,4 +10,7 @@ import ciu.jpa.model.Cliente;
 public interface CustomClienteRepository {
 
 	public List<Cliente> findAllClientesCustom();
+	
+	public List<Cliente> findClientesPorNumeroDeFacturaMayorA(Integer numeroDeFactura);
+
 }

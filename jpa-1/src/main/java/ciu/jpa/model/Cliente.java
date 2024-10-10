@@ -6,9 +6,14 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.NamedAttributeNode;
+import jakarta.persistence.NamedEntityGraph;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
+@NamedEntityGraph(
+  name = "Cliente.detalle",
+  attributeNodes = @NamedAttributeNode("facturas"))
 @Entity
 @Table(name="Cliente", schema = "persistencia1")
 public class Cliente {

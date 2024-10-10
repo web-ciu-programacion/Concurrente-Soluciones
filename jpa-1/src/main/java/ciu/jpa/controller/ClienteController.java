@@ -45,4 +45,21 @@ public class ClienteController {
 		return clientesDtos;
 	}
 
+	@GetMapping("/lamadrid/{numeroDeFactura}")
+	public List<ClienteDto> lamadrid(@PathVariable Integer numeroDeFactura) {
+		List<Cliente> clientes = this.clienteService.getClientesPorNumeroDeFacturaMayorA(numeroDeFactura);
+		List<ClienteDto> clientesDtos = new ArrayList<ClienteDto>();
+		clientes.forEach(cliente -> {
+			ClienteDto clienteDto = new ClienteDto(cliente, false);
+			clientesDtos.add(clienteDto);
+		});
+		return clientesDtos;
+	}
+
+	@GetMapping("/findByCodigo/{codigo}")
+	public ClienteDto buscar(@PathVariable String codigo) {
+		Cliente cliente = this.clienteService.getByCodigoEG(codigo);
+		ClienteDto clienteDto = new ClienteDto(cliente, false);
+		return clienteDto;
+	}
 }

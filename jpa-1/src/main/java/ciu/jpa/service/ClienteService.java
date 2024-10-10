@@ -35,4 +35,14 @@ public class ClienteService {
 //		return this.clienteRepository.findAllClientes();
 		return this.clienteRepository.findAllClientesCustom();
 	}
+	
+	@Transactional(readOnly = true)
+	public List<Cliente> getClientesPorNumeroDeFacturaMayorA(Integer numeroDeFactura) {
+		return this.clienteRepository.findClientesPorNumeroDeFacturaMayorA(numeroDeFactura);
+	}
+
+	@Transactional(readOnly = true)
+	public Cliente getByCodigoEG(String codigo) {
+		return this.clienteRepository.findByCodigo(codigo);
+	}
 }
