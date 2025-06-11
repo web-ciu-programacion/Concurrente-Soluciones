@@ -1,0 +1,12 @@
+services:
+  demo-api-server:
+    image: demo-api-server-redis:latest
+    container_name: demo-api-redis
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8080:8080
+networks:
+  default:
+    name: ciu-net
