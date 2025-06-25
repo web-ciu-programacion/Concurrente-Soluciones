@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  redis-server:
+    container_name: redis-ciu
+    image: 'redis:8.0.1-alpine'
+    ports:
+      - "6379:6379"
+
+networks:
+  default:
+    name: ciu-net
